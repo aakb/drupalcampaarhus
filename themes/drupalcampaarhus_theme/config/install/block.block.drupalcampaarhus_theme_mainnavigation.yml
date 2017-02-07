@@ -1,0 +1,24 @@
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - drupalcampaarhus_theme
+_core:
+  default_config_hash: ACw1-yU5DjrIBg4Bej3SEBl1hqiSaNAYkw05ZiJI92M
+id: drupalcampaarhus_theme_mainnavigation
+theme: drupalcampaarhus_theme
+region: nav_menu
+weight: -3
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+visibility: {  }

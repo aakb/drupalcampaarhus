@@ -1,0 +1,22 @@
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - drupalcampaarhus_theme
+_core:
+  default_config_hash: 20RmvGPY4UHWTvHkJ9Iu-iNl9I2ThGe2CsfvHNhwjG4
+id: drupalcampaarhus_theme_messages
+theme: drupalcampaarhus_theme
+region: '-1'
+weight: -3
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+  cache:
+    max_age: -1
+visibility: {  }

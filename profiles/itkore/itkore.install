@@ -1,0 +1,175 @@
+<?php
+/**
+ * @file
+ * Performs actions to set up the site for this profile.
+ */
+
+use \Drupal\node\Entity\Node;
+
+/**
+ * Implements hook_install().
+ *
+ * @see system_install()
+ */
+function itkore_install() {
+  // Disable the user pictures on nodes.
+  \Drupal::configFactory()
+    ->getEditable('system.theme.global')
+    ->set('features.node_user_picture', FALSE)
+    ->save(TRUE);
+
+  // Allow visitor account creation, but with administrative approval.
+  \Drupal::configFactory()
+    ->getEditable('user.settings')
+    ->set('register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL)
+    ->save(TRUE);
+
+  // Set toolbar visibility.
+  \Drupal::configFactory()
+    ->getEditable('toolbar_visibility.default_config')
+    ->set('toolbar_visibility_theme.itkore_base', 'itkore_base')
+    ->save(TRUE);
+  \Drupal::configFactory()
+    ->getEditable('toolbar_visibility.default_config')
+    ->set('toolbar_visibility_theme.itkore_blue', 'itkore_blue')
+    ->save(TRUE);
+  \Drupal::configFactory()
+    ->getEditable('toolbar_visibility.default_config')
+    ->set('toolbar_visibility_theme.itkore_orange', 'itkore_orange')
+    ->save(TRUE);
+
+  // Set theme default logo to FALSE to force use of site name.
+  \Drupal::configFactory()
+    ->getEditable('system.theme.global')
+    ->set('logo.use_default', FALSE)
+    ->save(TRUE);
+
+  // Set admin theme on node editing
+  \Drupal::configFactory()
+    ->getEditable('node.settings')
+    ->set('use_admin_theme', TRUE)
+    ->save(TRUE);
+
+  // Set site email.
+  \Drupal::configFactory()
+    ->getEditable('system.site')
+    ->set('mail', 'itkdesign@mkb.aarhus.dk')
+    ->save(TRUE);
+
+  // Set front page.
+  \Drupal::configFactory()
+    ->getEditable('system.site')
+    ->set('page.front', '/front')
+    ->save(TRUE);
+
+  \Drupal::getContainer()
+    ->get('itkore_admin.itkore_config')
+    ->setMultiple(array(
+      'itkore_frontpage.frontpage_title' => 'Velkommen til dit nye site',
+      'itkore_frontpage.frontpage_lead' => 'Kom igang med at lægge indhold ind ved at følge vores vejledning',
+      'itkore_frontpage.frontpage_sub' => 'Fortsæt ved at klikke på linket nedenunder',
+      'itkore_frontpage.frontpage_button' => 'Kom igang',
+      'itkore_frontpage.frontpage_link' => '/kom-igang',
+      'itkore_footer.footer_text' => 'Footeren kan redigeres  under ITKore indstillinger',
+    )
+  );
+
+  // Set imce settings.
+  \Drupal::configFactory()
+    ->getEditable('imce.settings')
+    ->set('roles_profiles.editor.public', 'custom_profile')
+    ->save(TRUE);
+
+  // Set meta-tag settings
+  \Drupal::configFactory()
+    ->getEditable('metatag.metatag_defaults.global')
+    ->set('tags.title', '[current-page:title]')
+    ->save(TRUE);
+  \Drupal::configFactory()
+    ->getEditable('metatag.metatag_defaults.node')
+    ->set('tags.title', '[node:title]')
+    ->save(TRUE);
+  \Drupal::configFactory()
+    ->getEditable('metatag.metatag_defaults.front'
+    )->set('tags.title', '[site:name]')
+    ->save(TRUE);
+
+  // Set login block on user reset page
+  $loginBlockConfig = \Drupal::configFactory()->getEditable('block.block.adminimal_theme_login');
+  $loginBlockConfig->set('visibility.request_path.id', 'request_path');
+  $loginBlockConfig->set('visibility.request_path.pages',
+'/user/reset/*
+/user/register
+/user/password'
+  );
+  $loginBlockConfig->set('visibility.request_path.negate', TRUE);
+  $loginBlockConfig->set('visibility.request_path.context_mapping', []);
+  $loginBlockConfig->save();
+
+  // Set date format.
+  \Drupal::configFactory()
+    ->getEditable('core.date_format.medium')
+    ->set('pattern', 'j. F Y')
+    ->save(TRUE);
+
+
+  // Create "Page not found" node
+  $title = 'Siden blev ikke fundet';
+  $content = '<h3>Fejlen kan skyldes at:</h3><ul><li>Siden er blevet slettet eller flyttet.</li><li>Du har tastet forkert i adressefeltet.</li><li>Der er en fejl i det link du klikkede på.</li></ul>';
+
+  $node = Node::create(array(
+    'title' => $title,
+    'nid' => NULL,
+    'type' => 'page',
+    'uid' => 1,
+    'language' => 'da',
+    'status' => TRUE,
+    'promote' => 0,
+    'created' => REQUEST_TIME,
+    'body' => [
+      'value' => $content,
+      'format' => 'filtered_html'
+    ],
+    'field_lead' => 'Siden du forsøgte at tilgå kunne ikke findes i systemet',
+  ));
+  $node->save();
+
+
+  // Set date format.
+  \Drupal::configFactory()
+    ->getEditable('system.site')
+    ->set('page.404', '/node/' . $node->id())
+    ->save(TRUE);
+
+
+
+  // Create cookie message page
+  $title = 'Information om cookies';
+  $content = '<p>En cookie er en tekstfil, der lagres på din computer (eller tilsvarende) for at kunne genkende den. Cookies indeholder oplysninger i anonymiseret form og de kan ikke indeholde virus.</p>';
+  $content .= '<h3>Cookies på dette site</h3>';
+  $content .= '<p>På dette website anvender vi cookies til at samle statistik om dit besøg. Vi bruger oplysningerne til at forbedre brugeroplevelsen.</p>';
+  $content .= '<p>Oplysningerne fra dette sites cookies bliver behandlet af sitets ejer samt ITK, Aarhus Kommune.</p>';
+  $content .= '<h3>Fravalg af cookies</h3>';
+  $content .= '<p>Hvis du nu eller i fremtiden ønsker at fravælge cookies, kan du gøre dette via dine browser-indstillinger. Hvis du fravælger cookies ved hjælp af dine browser-indstillinger, vil dine besøg ikke blive registreret.</p>';
+  $content .= '<p><a href="http://minecookies.org/cookiehandtering/">Læs hvordan du fravælger cookies via din browser på minecookies.org</a></p>';
+  $content .= '<h3>Hvorfor informerer vi om cookies?</h3>';
+  $content .= '<p>Vi informerer om cookies efter <a href="https://www.retsinformation.dk/Forms/R0710.aspx?id=139279">Bekendtgørelse om krav til information og samtykke ved lagring af eller adgang til oplysninger i slutbrugeres terminaludstyr</a>.</p>';
+
+  $node = Node::create(array(
+    'title' => $title,
+    'nid' => NULL,
+    'type' => 'page',
+    'uid' => 1,
+    'language' => 'da',
+    'status' => TRUE,
+    'promote' => 0,
+    'created' => REQUEST_TIME,
+    'body' => [
+      'value' => $content,
+      'format' => 'filtered_html'
+    ],
+  ));
+  $node->save();
+
+  \Drupal::service('path.alias_storage')->save('/node/' . $node->id(), '/information-om-cookies', 'da');
+}

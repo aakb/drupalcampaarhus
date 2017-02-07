@@ -1,0 +1,16 @@
+/**
+ *
+ * Patterns
+ *
+ */
+
+%image-overlay {
+  background-repeat: no-repeat;
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: z($z-index-elements, header-overlay);
+}

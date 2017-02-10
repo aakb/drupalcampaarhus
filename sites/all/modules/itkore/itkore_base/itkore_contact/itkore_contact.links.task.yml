@@ -1,0 +1,4 @@
+itkore_contact.admin:
+  title: 'Contact settings'
+  route_name: itkore_contact.settings
+  base_route: itkore_base.settings

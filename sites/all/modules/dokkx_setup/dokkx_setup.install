@@ -1,0 +1,71 @@
+<?php
+
+/**
+* Enable devel generate and toolbar visibility modules.
+*/
+function dokkx_setup_update_8001() {
+  // Enable modules.
+  $module_list = array(
+    'toolbar_visibility',
+    'devel_generate',
+  );
+  \Drupal::service('module_installer')->install($module_list);
+}
+
+/**
+ * Enable frontpage instagram module.
+ */
+function dokkx_setup_update_8002() {
+  // Enable modules.
+  $module_list = array(
+    'itkore_frontpage_hashtag'
+  );
+  \Drupal::service('module_installer')->install($module_list);
+}
+
+/**
+ * Enable Responsive image module.
+ */
+function dokkx_setup_update_8003() {
+  // Enable modules.
+  $module_list = array(
+    'responsive_image',
+    'breakpoint'
+  );
+  \Drupal::service('module_installer')->install($module_list);
+}
+
+/**
+ * Enable configuration modules.
+ */
+function dokkx_setup_update_8004() {
+  // Enable modules.
+  $module_list = array(
+    'itkore_contact',
+    'itkore_views_settings'
+  );
+  \Drupal::service('module_installer')->install($module_list);
+}
+
+/**
+ * Disable contact modules.
+ */
+function dokkx_setup_update_8005() {
+  // Enable modules.
+  $module_list = array(
+    'itkore_contact',
+    'contact'
+  );
+  \Drupal::service('module_installer')->uninstall($module_list);
+}
+
+/**
+ * Uninstall frontpage instagram module.
+ */
+function dokkx_setup_update_8006() {
+  // Enable modules.
+  $module_list = array(
+    'itkore_frontpage_hashtag'
+  );
+  \Drupal::service('module_installer')->uninstall($module_list);
+}

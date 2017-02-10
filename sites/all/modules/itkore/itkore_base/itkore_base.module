@@ -1,0 +1,24 @@
+<?php
+
+use Drupal\file\Entity\File;
+
+/**
+* Implements hook_preprocess_html().
+*/
+function itkore_base_page_attachments(array &$page) {
+  //$variables['html']['#attached']['library'][] = 'itkore_base/itkore_base_styles';
+  $page['#attached']['library'][] = 'itkore_base/itkore_base_styles';
+}
+
+
+/**
+ * Deletes a a file from file usage table.
+ *
+ * @param int $fid
+ *   The file id of the file to delete.
+ */
+function removeFile($fid) {
+  // Load and delete old file.
+  $file = File::load($fid);
+  \Drupal::service('file.usage')->delete($file, 'itkore_base', 'user', '1', '1');
+}

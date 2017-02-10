@@ -1,0 +1,8 @@
+# --- Administration pages routing --- #
+itkore_views.settings:
+  path: '/admin/site-setup/views'
+  defaults:
+    _form: '\Drupal\itkore_views_settings\Form\ItkoreViewsSettingsForm'
+    _title: 'Views settings'
+  requirements:
+    _permission: 'access itkore settings'

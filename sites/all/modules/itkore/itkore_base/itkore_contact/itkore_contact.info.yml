@@ -1,0 +1,8 @@
+name: ITkore Contact
+type: module
+description: 'Provides custom administration settings for contact module.'
+package: ITKore
+core: 8.x
+dependencies:
+  - contact
+  - itkore_base

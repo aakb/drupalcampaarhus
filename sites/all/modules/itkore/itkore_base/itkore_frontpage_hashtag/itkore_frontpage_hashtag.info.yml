@@ -1,0 +1,9 @@
+name: ITkore frontpage hashtag
+type: module
+description: 'Provides hashtag field for frontpage.'
+package: ITKore
+core: 8.x
+dependencies:
+  - system
+  - file
+  - itkore_base

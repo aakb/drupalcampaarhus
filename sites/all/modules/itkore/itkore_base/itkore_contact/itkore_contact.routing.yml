@@ -1,0 +1,8 @@
+# --- Administration pages routing --- #
+itkore_contact.settings:
+  path: '/admin/site-setup/contact'
+  defaults:
+    _form: '\Drupal\itkore_contact\Form\ItkoreContactSettingsForm'
+    _title: 'Contact settings'
+  requirements:
+    _permission: 'access itkore settings'

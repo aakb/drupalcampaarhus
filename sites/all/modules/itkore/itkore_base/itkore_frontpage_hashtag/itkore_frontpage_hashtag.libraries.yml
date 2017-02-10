@@ -1,0 +1,8 @@
+itkore-frontpage-hashtag:
+  version: 1.x
+  js:
+    js/min/instafeed.min.js: {}
+    js/itkore-frontpage-hashtag.js: {}
+  dependencies:
+      - core/jquery
+      - core/drupalSettings

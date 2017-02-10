@@ -1,0 +1,28 @@
+<?php
+
+use Drupal\Core\Config;
+use Drupal\file\Entity\File;
+
+
+/**
+ * Implements hook_preprocess_page()
+ *
+ * @param $variables
+ *
+ */
+function itkore_contact_preprocess_page (&$variables) {
+  // Fetch itkore settings.
+  $config = \Drupal::getContainer()->get('itkore_base.itkore_config');
+
+  // Contact page variables for page template.
+  if (isset($config)) {
+    // Fetch contact image file.
+    $image_id = $config->get('itkore_contact.contact_image');
+    $file = ($image_id) ? File::load($image_id) : FALSE;
+
+    $variables['contact_title'] = $config->get('itkore_contact.contact_title');
+    $variables['contact_lead'] = $config->get('itkore_contact.contact_lead');
+    $variables['contact_text'] = check_markup($config->get('itkore_contact.contact_text'), 'filtered_html');
+    $variables['contact_image'] = ($file) ? $file->url() : FALSE;
+  }
+}

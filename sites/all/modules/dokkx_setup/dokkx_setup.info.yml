@@ -1,0 +1,5 @@
+name: Dokkx setup
+description: 'Sets up configuration for dokkx'
+type: module
+core: 8.x
+package: Dokkx

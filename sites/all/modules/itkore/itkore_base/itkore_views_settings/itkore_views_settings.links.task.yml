@@ -1,0 +1,4 @@
+itkore_views.admin:
+  title: 'Overview settings'
+  route_name: itkore_views.settings
+  base_route: itkore_base.settings

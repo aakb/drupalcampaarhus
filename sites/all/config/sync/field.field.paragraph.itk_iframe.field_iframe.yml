@@ -1,0 +1,21 @@
+uuid: 85ff4313-804b-4d6a-9000-a1b9fa437be4
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_iframe
+    - paragraphs.paragraphs_type.itk_iframe
+_core:
+  default_config_hash: CaK2P16gdiMBNJ8_i7nfFj3SF6_KiS8M_dpAOkKQpc0
+id: paragraph.itk_iframe.field_iframe
+field_name: field_iframe
+entity_type: paragraph
+bundle: itk_iframe
+label: Iframe
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

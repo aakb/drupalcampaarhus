@@ -1,0 +1,16 @@
+global-styling:
+  version: VERSION
+  css:
+    theme:
+      css/styles.css: { media: screen }
+      css/ie9.css: { browsers: { IE: 'lte IE 9', '!IE': false } }
+
+global-js:
+  version: VERSION
+  js:
+    js/menu-toggle.js: {}
+    js/header-scrolling.js: {}
+    js/site-improve.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once

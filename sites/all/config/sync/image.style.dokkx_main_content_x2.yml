@@ -1,0 +1,14 @@
+uuid: 35ddf07c-a105-48ab-8e51-8128ea32f4b0
+langcode: en
+status: true
+dependencies: {  }
+name: dokkx_main_content_x2
+label: 'Main content x2'
+effects:
+  58103db9-1484-47e5-b800-f8a6844759da:
+    uuid: 58103db9-1484-47e5-b800-f8a6844759da
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 2048
+      height: 1024

@@ -1,0 +1,8 @@
+uuid: 200be886-b3c8-48d9-a943-67f992af680a
+langcode: da
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: vdPPFGVv3XbN0GUxAbfX9_PMVVOVI3GkvwzqXmJSyQY
+id: itk_title_paragraph
+label: 'Title paragraph'

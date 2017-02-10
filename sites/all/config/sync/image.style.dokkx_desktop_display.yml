@@ -1,0 +1,14 @@
+uuid: 71bfe2ac-225f-4788-b300-af2562803902
+langcode: en
+status: true
+dependencies: {  }
+name: dokkx_desktop_display
+label: 'Desktop display'
+effects:
+  3de2433c-9296-497f-ab07-7f71ded54ed7:
+    uuid: 3de2433c-9296-497f-ab07-7f71ded54ed7
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1500
+      height: 750

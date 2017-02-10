@@ -1,0 +1,30 @@
+itkore.breakpoint-mobile:
+  label: breakpoint-mobile
+  mediaQuery: ''
+  weight: 0
+  multipliers:
+    - 1x
+itkore.breakpoint-lab:
+  label: breakpoint-lab
+  mediaQuery: 'all and (min-width: 481px) and (max-width: 719px)'
+  weight: 1
+  multipliers:
+    - 1x
+itkore.breakpoint-tablet:
+  label: breakpoint-tablet
+  mediaQuery: 'all and (min-width: 720px) and (max-width: 1023px)'
+  weight: 2
+  multipliers:
+    - 1x
+itkore.breakpoint-desk:
+  label: breakpoint-desk
+  mediaQuery: 'all and (min-width: 1024px) and (max-width: 1499px)'
+  weight: 3
+  multipliers:
+    - 1x
+itkore.breakpoint-bigscreen:
+  label: breakpoint-bigscreen
+  mediaQuery: 'all and (min-width: 1500px)'
+  weight: 4
+  multipliers:
+    - 1x

@@ -1,0 +1,40 @@
+uuid: 30291bf7-a9b7-4973-9800-a124fc7524f1
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_page_image
+    - node.type.event
+  module:
+    - image
+_core:
+  default_config_hash: 7QjjlwfntNk6VcUeqLmD46-Y61oLOEXt9yTueiBBMzY
+id: node.event.field_related_page_image
+field_name: field_related_page_image
+entity_type: node
+bundle: event
+label: 'Related Page Image'
+description: 'En minimum størrelse på billedet på 224×224 giver det bedste resultat.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: content
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: false
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

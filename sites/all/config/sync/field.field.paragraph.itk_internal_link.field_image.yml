@@ -1,0 +1,40 @@
+uuid: 80c39cd4-d922-4f9a-9500-e32e98de3246
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image
+    - paragraphs.paragraphs_type.itk_internal_link
+  module:
+    - image
+_core:
+  default_config_hash: WC9mc7Kzbf2RFwXF2OY1CCtrUcZr39cU-RoaXmTZL1c
+id: paragraph.itk_internal_link.field_image
+field_name: field_image
+entity_type: paragraph
+bundle: itk_internal_link
+label: Image
+description: 'En minimum størrelse på billedet på 224×224 giver det bedste resultat.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

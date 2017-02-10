@@ -1,0 +1,17 @@
+uuid: 0463eb51-e95b-4fbe-a100-bd17b56b7c62
+langcode: da
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: keAcyU11iIb92fyAExtjcDZN5Vz6voD-8cTe4wyq97c
+name: paragraphs_content_image
+label: 'Paragraphs Content Image'
+effects:
+  c7a5ad43-3f5f-4bb6-a100-c332079347b0:
+    uuid: c7a5ad43-3f5f-4bb6-a100-c332079347b0
+    id: image_scale
+    weight: 1
+    data:
+      width: 500
+      height: null
+      upscale: false

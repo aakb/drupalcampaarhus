@@ -1,0 +1,15 @@
+uuid: 01116f60-6e2c-4db2-8e2d-45d735f284c4
+langcode: da
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'Godkendt bruger'
+weight: 1
+is_admin: false
+permissions:
+  - 'access content'
+  - 'view the administration theme'
+  - 'access site-wide contact form'
+  - 'access user contact forms'

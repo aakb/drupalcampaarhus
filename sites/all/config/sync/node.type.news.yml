@@ -1,0 +1,20 @@
+uuid: 48e4b3d3-6134-4b23-810b-1133a7507813
+langcode: da
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: lbQJ8AHGx67I0_TGn_MN4XTM7ujd8xZ5S7TdL64Ixtk
+name: News
+type: news
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

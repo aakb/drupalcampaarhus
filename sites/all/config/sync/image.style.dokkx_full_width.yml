@@ -1,0 +1,14 @@
+uuid: e2292a6f-200c-4f92-b603-3c56baa294f4
+langcode: en
+status: true
+dependencies: {  }
+name: dokkx_full_width
+label: 'Full width'
+effects:
+  f6b5d2c7-bce7-4fea-9800-da10f3bbf1ea:
+    uuid: f6b5d2c7-bce7-4fea-9800-da10f3bbf1ea
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 2594
+      height: 1272

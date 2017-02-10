@@ -1,0 +1,28 @@
+uuid: e01fdb37-ebf4-40c2-9a04-4b64d35b73de
+langcode: da
+status: false
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - seven
+_core:
+  default_config_hash: yMn3GYOqMqTOATNpXQZMYbTAQsuf6-3EL2oNy6Pdvh8
+id: seven_tools
+theme: seven
+region: '-1'
+weight: -2
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Tools
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  cache:
+    max_age: -1
+visibility: {  }

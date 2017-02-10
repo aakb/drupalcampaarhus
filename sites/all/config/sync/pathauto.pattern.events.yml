@@ -1,0 +1,23 @@
+uuid: 8b37a37f-d01b-4973-b300-c039d60a3168
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - node
+id: events
+label: Begivenheder
+type: 'canonical_entities:node'
+pattern: 'begivenheder/[node:title]'
+selection_criteria:
+  e6fd8b4b-a3bb-411f-9928-405e97a3e60d:
+    id: node_type
+    bundles:
+      event: event
+    negate: false
+    context_mapping:
+      node: node
+    uuid: e6fd8b4b-a3bb-411f-9928-405e97a3e60d
+selection_logic: and
+weight: -5
+relationships: {  }

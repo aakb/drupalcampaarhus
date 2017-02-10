@@ -1,0 +1,23 @@
+uuid: 1897420a-a124-4a6b-b304-4a40c7f0fe13
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - node
+id: news
+label: Nyheder
+type: 'canonical_entities:node'
+pattern: 'nyheder/[node:title]'
+selection_criteria:
+  6eae03fa-d495-4733-9c07-7d8d2deb5fbf:
+    id: node_type
+    bundles:
+      news: news
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 6eae03fa-d495-4733-9c07-7d8d2deb5fbf
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,29 @@
+uuid: 893e9c7e-0571-4d29-8d5f-95c57a12abc8
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location
+    - node.type.event
+    - taxonomy.vocabulary.location
+_core:
+  default_config_hash: Si8FraQ1DpLW_MYrSW3OOcs9DAuU16mmh-EXBsokzPc
+id: node.event.field_location
+field_name: field_location
+entity_type: node
+bundle: event
+label: Location
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      location: location
+    sort:
+      field: _none
+    auto_create: true
+field_type: entity_reference

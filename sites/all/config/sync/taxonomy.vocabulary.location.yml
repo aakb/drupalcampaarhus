@@ -1,0 +1,11 @@
+uuid: 5da149c8-2987-4019-ae0a-1026cc86b633
+langcode: da
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: EEdwFWi4yFIu7S4l_Rzpw3W0_Bp8vm342ZZOFDrY4Xk
+name: Location
+vid: location
+description: 'Possible locations'
+hierarchy: 0
+weight: 0

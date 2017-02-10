@@ -1,0 +1,33 @@
+uuid: 1991064e-29a3-4d3a-8a00-dea896be2c68
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pages
+    - node.type.event
+    - node.type.news
+    - node.type.overview_page
+    - node.type.page
+_core:
+  default_config_hash: c-SrERocv_bMoOuzSbYWVfMh5c1lYUd-FqmZceJVUEU
+id: node.event.field_pages
+field_name: field_pages
+entity_type: node
+bundle: event
+label: 'Related pages'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      event: event
+      news: news
+      overview_page: overview_page
+      page: page
+    sort:
+      field: _none
+field_type: entity_reference

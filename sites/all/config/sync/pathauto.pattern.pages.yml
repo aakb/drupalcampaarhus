@@ -1,0 +1,24 @@
+uuid: 21e9d739-29f8-4fce-a24d-77b5a2f35768
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - node
+id: pages
+label: Pages
+type: 'canonical_entities:node'
+pattern: '[node:menu-link:parents:join-path]/[node:title]'
+selection_criteria:
+  e3036571-3348-4cdb-b200-d4f99e46d425:
+    id: node_type
+    bundles:
+      overview_page: overview_page
+      page: page
+    negate: false
+    context_mapping:
+      node: node
+    uuid: e3036571-3348-4cdb-b200-d4f99e46d425
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,31 @@
+uuid: cc6e7792-86cd-4563-a900-ce532ab479c1
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.itk_iframe.field_iframe
+    - field.field.paragraph.itk_iframe.field_title
+    - paragraphs.paragraphs_type.itk_iframe
+_core:
+  default_config_hash: exPxxMC5a6SwZQqTkWJUbPkj6ybgkLQ-AjwPfLEIiB8
+id: paragraph.itk_iframe.default
+targetEntityType: paragraph
+bundle: itk_iframe
+mode: default
+content:
+  field_iframe:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  field_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  created: true
+  uid: true

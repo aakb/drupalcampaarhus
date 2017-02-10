@@ -1,0 +1,32 @@
+uuid: db301ad2-afb6-4c8e-ac00-a642761d1124
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.itk_iframe.field_iframe
+    - field.field.paragraph.itk_iframe.field_title
+    - paragraphs.paragraphs_type.itk_iframe
+_core:
+  default_config_hash: gwl0R6EecIkCaKTNG1scVN7WD-h1OApaIfyY5V6gUSk
+id: paragraph.itk_iframe.default
+targetEntityType: paragraph
+bundle: itk_iframe
+mode: default
+content:
+  field_iframe:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+  field_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+hidden:
+  created: true
+  uid: true

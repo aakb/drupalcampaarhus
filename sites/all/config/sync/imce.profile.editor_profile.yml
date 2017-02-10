@@ -1,0 +1,23 @@
+uuid: 3e16854e-0cb3-4e8c-8300-bc3d43fbbe48
+langcode: en
+status: true
+dependencies: {  }
+id: editor_profile
+label: 'Editor Profile'
+description: 'Configuration for editors'
+conf:
+  extensions: 'jpg jpeg png gif pdf'
+  maxsize: null
+  quota: null
+  maxwidth: null
+  maxheight: null
+  replace: 1
+  folders:
+    -
+      path: content
+      permissions:
+        all: true
+    -
+      path: images
+      permissions:
+        all: true

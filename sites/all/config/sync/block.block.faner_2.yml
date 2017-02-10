@@ -1,0 +1,20 @@
+uuid: ee1c31bc-027e-4d3c-a206-6ba5f95a569d
+langcode: da
+status: true
+dependencies:
+  theme:
+    - dokkx
+id: faner_2
+theme: dokkx
+region: content
+weight: -2
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Faner
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

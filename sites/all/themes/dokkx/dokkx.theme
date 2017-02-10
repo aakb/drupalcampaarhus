@@ -1,0 +1,159 @@
+<?php
+
+use Drupal\file\Entity\File;
+use Drupal\Core\Config;
+use Drupal\Core\Menu\MenuTreeParameters;
+
+
+/**
+ * Implements hook_preprocess_page()
+ *
+ * @param $variables
+ *
+ */
+function dokkx_preprocess_page (&$variables) {
+  // Fetch cfia config settings.
+  $config = \Drupal::getContainer()->get('itkore_base.itkore_config');
+
+  // Frontpage variables for page template.
+  if (isset($config) && $variables['is_front'] == TRUE) {
+    // Fetch header top file.
+    $top_image_id = $config->get('itkore_frontpage.frontpage_image');
+    $file = ($top_image_id) ? File::load($top_image_id) : FALSE;
+    // Set variables
+    $variables['front_title'] = $config->get('itkore_frontpage.frontpage_title');
+    $variables['front_lead'] = $config->get('itkore_frontpage.frontpage_lead');
+    $variables['front_sub'] = $config->get('itkore_frontpage.frontpage_sub');
+    $variables['front_button_text'] = $config->get('itkore_frontpage.frontpage_button');
+    $variables['front_button_link'] = $config->get('itkore_frontpage.frontpage_link');
+    $variables['front_image'] = ($file) ? $file->url() : 'sites/all/themes/cfia/images/header-background.jpg';
+    $variables['front_hashtag'] = $config->get('itkore_frontpage.frontpage_hashtag');
+  }
+
+  // Footer variables for page template.
+  if (isset($config)) {
+    $variables['footer_text'] = check_markup($config->get('itkore_footer.footer_text'), 'filtered_html');
+    $variables['footer_twitter'] = $config->get('itkore_footer.footer_twitter');
+    $variables['footer_instagram'] = $config->get('itkore_footer.footer_instagram');
+    $variables['footer_facebook'] = $config->get('itkore_footer.footer_facebook');
+    $variables['footer_linkedin'] = $config->get('itkore_footer.footer_linkedin');
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_node().
+ *
+ * Calls node type specific preprocess functions, e.g. "dokk_preprocess_node_event" for nodes of type event.
+ *
+ */
+function dokkx_preprocess_node(&$variables) {
+  // Setup specific preprocess functions based on node type.
+  $function = __FUNCTION__ . '_'. $variables['node']->getType();
+
+  // Call function.
+  if (function_exists($function)) {
+    $function($variables);
+  }
+}
+
+
+
+/**
+ * Implements hook_preprocess_node().
+ *
+ * Calls node type specific preprocess functions, e.g. "dokk_preprocess_node_event" for nodes of type event.
+ *
+ */
+function dokkx_preprocess_menu(&$variables) {
+  $variables['hamburger_menu'] = FALSE;
+  // The only way to identify which region is rendering the menu block is to check for expanded (Main nav does not have any children and neither item is expanded.)
+  // This won't work if for some reason none of the menu items have any children,
+ foreach ($variables['items'] as $item) {
+    if($item['is_expanded'] == TRUE) {
+      $variables['hamburger_menu'] = TRUE;
+    }
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_node__type().
+ */
+function dokkx_preprocess_node_event(&$variables) {
+  // Set timezone UTC to properly create format.
+  $DateTimeZoneUTC = new DateTimeZone('UTC');
+
+  // Create start and end time php object.
+  $startDateTime = DateTime::CreateFromFormat('Y-m-d\TH:i:s', $variables['node']->field_starttime->value, $DateTimeZoneUTC);
+  $endDateTime = DateTime::CreateFromFormat('Y-m-d\TH:i:s', $variables['node']->field_endtime->value, $DateTimeZoneUTC);
+
+  // Set time and date based on object in timestamp format.
+  $variables['eventdate'] = \Drupal::service('date.formatter')->format(date('U', $startDateTime->getTimestamp()), 'custom', 'l j. F Y');
+  $variables['eventstarttime'] = \Drupal::service('date.formatter')->format(date('U', $startDateTime->getTimestamp()), 'custom', 'G:i');
+  $variables['eventendtime'] = \Drupal::service('date.formatter')->format(date('U', $endDateTime->getTimestamp()), 'custom', 'G:i');
+}
+
+/**
+ * Implements hook_form_contact_message_book_en_rundvisning_form_alter().
+ *
+ * Alter the contact form - This is the only way.
+ */
+
+function dokkx_form_contact_message_book_en_rundvisning_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
+
+  // Name
+  $form['name']['#attributes']['placeholder'][] = 'Skriv dit fulde navn';
+  $form['name']['#attributes']['class'][] = 'form-control';
+
+//Institution
+  $form['field_institution_forening']['widget'][0]['value']['#attributes']['class'][] = 'form-control';
+  $form['field_institution_forening']['widget'][0]['value']['#attributes']['placeholder'][] = $form['field_institution_forening']['widget'][0]['#description'];
+  $form['field_institution_forening']['widget'][0]['#title'] = '';
+  unset($form['field_institution_forening']['widget'][0]['value']['#description']);
+
+//antal personer
+  $form['field_antal_personer']['widget'][0]['value']['#attributes']['class'][] = 'form-control';
+  $form['field_antal_personer']['widget'][0]['value']['#attributes']['placeholder'][] = $form['field_antal_personer']['widget'][0]['#description'];
+  $form['field_antal_personer']['widget'][0]['#title'] = '';
+  unset($form['field_antal_personer']['widget'][0]['value']['#description']);
+
+
+  // Mail
+  $form['mail']['#attributes']['class'][] = 'form-control';
+  $form['mail']['#attributes']['placeholder'][] = 'Skriv e-mail adresse';
+
+  // Message
+  $form['message']['widget'][0]['value']['#attributes']['class'][] = 'form-control';
+  $form['message']['widget'][0]['#title'] = '';
+
+  // Submit
+  $form['actions']['submit']['#attributes']['class'][] = 'btn';
+  $form['actions']['submit']['#attributes']['class'][] = 'btn-success';
+
+  unset($form['actions']['preview']);
+}
+
+
+/**
+ * Implements hook_preprocess_field().
+ *
+ * Enable preprocess function for specific fields.
+ */
+function dokkx_preprocess_field(&$variables) {
+  $function = __FUNCTION__ . '__' . $variables['element']['#field_name'];
+
+  if (function_exists($function)) {
+    $function($variables);
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_field__().
+ *
+ * Enable preprocess function for specific fields.
+ */
+function dokkx_preprocess_field__field_iframe(&$variables) {
+  $variables['unformatted_iframe'] = strip_tags($variables['items']['0']['content']['#context']['value'], '<iframe>');
+}

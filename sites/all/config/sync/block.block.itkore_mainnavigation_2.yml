@@ -1,0 +1,24 @@
+uuid: b1c5f7fc-0045-4c40-a300-f4cfa1b0b467
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - itkore
+id: itkore_mainnavigation_2
+theme: itkore
+region: nav_menu
+weight: -3
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

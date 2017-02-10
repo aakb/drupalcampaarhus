@@ -1,0 +1,39 @@
+description: 'Alt indhold som vises på forsiden.'
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Udfør
+          reset_button_label: Gendan
+          exposed_sorts_label: 'Sortér efter'
+          sort_asc_label: Stigende
+          sort_desc_label: Faldende
+      fields:
+        field_starttime:
+          separator: ', '
+        title:
+          separator: ', '
+        field_starttime_1:
+          separator: ', '
+        field_endtime:
+          separator: ', '
+        field_related_page_teaser:
+          separator: ', '
+        field_main_image:
+          separator: ', '
+    display_title: Master
+  block_1:
+    display_title: Blok
+  page_1:
+    display_title: Side
+    display_options:
+      pager:
+        options:
+          tags:
+            previous: ‹‹
+            next: ››
+          expose:
+            items_per_page_label: 'Antal elementer'
+            items_per_page_options_all_label: '- Alle -'
+            offset_label: Forskydning

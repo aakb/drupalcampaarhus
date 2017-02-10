@@ -1,0 +1,14 @@
+uuid: 7b5a2c1b-1f1a-413d-8e0b-11a84c223a06
+langcode: en
+status: true
+dependencies: {  }
+name: dokkx_main_content_width
+label: 'Main content width'
+effects:
+  c167dd31-6e52-4c7f-8733-5110327169ca:
+    uuid: c167dd31-6e52-4c7f-8733-5110327169ca
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1024
+      height: 512

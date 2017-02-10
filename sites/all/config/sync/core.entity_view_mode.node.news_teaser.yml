@@ -1,0 +1,12 @@
+uuid: 17c07350-a70e-4cde-b005-5c6e83a1d148
+langcode: da
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: R4ff1GNUrdVj7I2ZX6YEVe8CmgNXhYZ6YNhnEoM3sqA
+id: node.news_teaser
+label: 'News teaser'
+targetEntityType: node
+cache: true

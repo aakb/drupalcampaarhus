@@ -1,0 +1,48 @@
+uuid: 6b9282fb-5da0-4817-be00-f2fb872e0c48
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.dokkx_desktop_display
+    - image.style.dokkx_full_width
+    - image.style.dokkx_main_content_width
+    - image.style.dokkx_main_content_x2
+    - image.style.dokkx_narrow_width
+    - image.style.dokkx_narrow_width_x2
+  theme:
+    - dokkx
+id: dokkx_content_main_image
+label: 'Dokkx content main image'
+image_style_mappings:
+  -
+    breakpoint_id: dokkx.breakpoint-bigscreen
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: dokkx_full_width
+  -
+    breakpoint_id: dokkx.breakpoint-desktop
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: dokkx_desktop_display
+  -
+    breakpoint_id: dokkx.breakpoint-tablet
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: dokkx_main_content_width
+  -
+    breakpoint_id: dokkx.breakpoint-tablet
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: dokkx_main_content_x2
+  -
+    breakpoint_id: dokkx.breakpoint-mobile
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: dokkx_narrow_width
+  -
+    breakpoint_id: dokkx.breakpoint-mobile
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: dokkx_narrow_width_x2
+breakpoint_group: dokkx
+fallback_image_style: dokkx_narrow_width

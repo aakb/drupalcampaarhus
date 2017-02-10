@@ -1,0 +1,24 @@
+uuid: 5dd356cc-5b89-4a8e-aa00-0cc9275ecbc0
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.dokkx_frontpage_news
+  module:
+    - views
+  theme:
+    - itkore
+id: itkore_views_block__dokkx_frontpage_news_block_1
+theme: itkore
+region: content
+weight: -4
+provider: null
+plugin: 'views_block:dokkx_frontpage_news-block_1'
+settings:
+  id: 'views_block:dokkx_frontpage_news-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility: {  }

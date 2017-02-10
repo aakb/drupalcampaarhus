@@ -1,0 +1,14 @@
+uuid: 2127dd0a-c697-4893-ba06-6a47ff5d1da2
+langcode: en
+status: true
+dependencies: {  }
+name: dokkx_narrow_width
+label: 'Narrow width'
+effects:
+  e52fca08-ee57-4487-a53f-6386781d57bc:
+    uuid: e52fca08-ee57-4487-a53f-6386781d57bc
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 480
+      height: 230

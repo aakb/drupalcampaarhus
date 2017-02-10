@@ -1,0 +1,58 @@
+uuid: 569a4c48-6292-4aba-a713-19dff1e4c833
+langcode: da
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.news.body
+    - field.field.node.news.field_instagram
+    - field.field.node.news.field_lead
+    - field.field.node.news.field_main_image
+    - field.field.node.news.field_pages
+    - field.field.node.news.field_paragraphs
+    - field.field.node.news.field_related_page_image
+    - field.field.node.news.field_related_page_teaser
+    - field.field.node.news.field_related_page_title
+    - image.style.related_page_image
+    - node.type.news
+  module:
+    - image
+    - user
+_core:
+  default_config_hash: J39y_GSun2G4z02c4o-2ukdnHqOWa4cXZl42emkcRco
+id: node.news.teaser
+targetEntityType: node
+bundle: news
+mode: teaser
+content:
+  field_related_page_image:
+    type: image
+    weight: 1
+    label: hidden
+    settings:
+      image_style: related_page_image
+      image_link: content
+    third_party_settings: {  }
+  field_related_page_teaser:
+    type: string
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_related_page_title:
+    type: string
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_instagram: true
+  field_lead: true
+  field_main_image: true
+  field_pages: true
+  field_paragraphs: true
+  langcode: true
+  links: true

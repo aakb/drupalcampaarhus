@@ -11,13 +11,13 @@
 .logo.is-sticky,
 .is-frontpage .logo.is-sticky {
   position: absolute;
-  top: 1.7em;
+  top: 1.4em;
   left: $layout-padding;
   z-index: z($z-index-elements, logo);
   overflow: hidden;
 
   display: block;
-  height: 2em;
+  height: 2.6em;
   width: 10em;
 
   @include breakpoint($breakpoint-desk) {

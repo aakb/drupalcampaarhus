@@ -51,7 +51,7 @@ $left-and-right-padding: 1em;
     margin-left: $left-and-right-padding;
   }
 
-  &--aarhus {
+  &--first {
     margin-bottom: $top-and-button-margin;
 
     @include flexbox;
@@ -84,7 +84,7 @@ $left-and-right-padding: 1em;
       @include justify-content(flex-end);
     }
 
-    &--aarhus {
+    &--first {
       order: 1;
       @include flex-basis(25%);
       @include justify-content(flex-start);

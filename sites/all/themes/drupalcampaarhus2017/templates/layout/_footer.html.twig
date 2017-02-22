@@ -1,0 +1,21 @@
+<footer class="footer">
+  <div class="footer--content">
+    <div class="footer--first">
+      <a href="http://dokk1.dk"><figure class="footer--logo"><img src="/sites/all/themes/drupalcampaarhus2017/images/dokk1.png"></figure></a>
+    </div>
+    <div class="footer--mail">
+      {{ footer_text | striptags('<a>') | raw  }}
+    </div>
+    <div class="footer--social">
+      {% if footer_twitter %}
+        <a href="{{ footer_twitter }}"><figure class="footer--icons"><img src="/sites/all/themes/drupalcampaarhus2017/images/twitter.png"></figure></a>
+      {% endif %}
+      {% if footer_facebook %}
+        <a href="{{ footer_facebook }}"><figure class="footer--icons"><img src="/sites/all/themes/drupalcampaarhus2017/images/facebook.png"></figure></a>
+      {% endif %}
+      {% if footer_linkedin %}
+        <a href="{{ footer_linkedin }}"><figure class="footer--icons"><img src="/sites/all/themes/drupalcampaarhus2017/images/linkedin.png"></figure></a>
+      {% endif %}
+    </div>
+  </div>
+</footer>

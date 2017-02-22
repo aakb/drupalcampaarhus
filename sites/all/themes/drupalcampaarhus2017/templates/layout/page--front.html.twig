@@ -62,41 +62,64 @@
  * @ingroup themeable
  */
 #}
-
-<header>
-  <div class="overlay js-menu-toggle"></div>
-
-  <a href="/" class="logo js-logo" title="DokkX"><figure>{% include '@dokkx/../images/assets/logo.svg' %}</figure></a>
-  <nav class="nav js-nav">
-    <div class="nav--links">
-      {{ page.nav_menu }}
-    </div>
-  </nav>
-  <div class="nav-toggle js-menu-toggle">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
+<div class="overlay js-menu-toggle"></div>
+<a href="/" class="logo js-logo" title="drupalcampaarhus2017"><figure>{% include '@drupalcampaarhus2017/../images/assets/logo.svg' %}</figure></a>
+<nav class="nav js-nav">
+  <div class="nav--links">
+    {{ page.nav_menu }}
   </div>
-  <nav class="hamburger-menu">
-    <div class="hamburger-menu--inner">
-      <div class="hamburger-menu--links">
-        {{ page.hamburger }}
+</nav>
+<div class="nav-toggle js-menu-toggle">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+<nav class="hamburger-menu">
+  <div class="hamburger-menu--inner">
+    <div class="hamburger-menu--links">
+      {{ page.hamburger }}
+    </div>
+  </div>
+</nav>
+
+<div class="header" role="banner" id="home" style="background-image: url({{ front_image }})">
+  <div class="header--inner">
+    <h1 class="header--big">{{ front_title }}</h1>
+    {% if front_lead %}
+      <p class="header--lead">
+        {{ front_lead }}
+      </p>
+    {% endif %}
+    {% if front_sub %}
+      <p class="header--sub">
+        {{ front_sub }}
+      </p>
+    {% endif %}
+    {% if front_button_text and front_button_link %}
+      <div class="header--button-wrapper">
+        <a href="{{ front_button_link }}" class="header--button-link is-primary">{{ front_button_text }}</a>
       </div>
-    </div>
-  </nav>
-</header>
-
-<main role="main" class="content">
-  <figure class="content--image-wrapper">
-    <img src="{{ news_image }}">
-  </figure>
-  <div class="content--inner">
-    <h1 class="content--header">{{ news_title }}</h1>
-    {{ page.content }}
+    {% endif %}
   </div>
+</div>
+
+{%
+  set classes = [
+    'content--inner',
+    'content--inner-' ~ region|clean_class,
+  ]
+%}
+<main role="main" class="content">
+    <div{{ attributes.addClass(classes) }}>
+     {{ title }}
+    {{ title }}
+  {{ page.content }}
+</div>
 </main>
-{% include '@dokkx/layout/_footer.html.twig' %}
+
+
+{% include '@drupalcampaarhus2017/layout/_footer.html.twig' %}
 
 {# Tabs positioned fixed. #}
 {{ tabs }}

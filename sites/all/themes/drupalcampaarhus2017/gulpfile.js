@@ -19,8 +19,8 @@ var rename = require('gulp-rename');
  */
 var browserSync = require('browser-sync').create();
 browserSync.init({
-  proxy: "dokkx.vm",
-  host: "dokkx.vm"
+  proxy: "drupalcampaarhus2017.vm",
+  host: "drupalcampaarhus2017.vm"
 });
 
 

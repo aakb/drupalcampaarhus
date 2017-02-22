@@ -11,7 +11,7 @@ use Drupal\Core\Menu\MenuTreeParameters;
  * @param $variables
  *
  */
-function dokkx_preprocess_page (&$variables) {
+function drupalcampaarhus2017_preprocess_page (&$variables) {
   // Fetch cfia config settings.
   $config = \Drupal::getContainer()->get('itkore_base.itkore_config');
 
@@ -47,7 +47,7 @@ function dokkx_preprocess_page (&$variables) {
  * Calls node type specific preprocess functions, e.g. "dokk_preprocess_node_event" for nodes of type event.
  *
  */
-function dokkx_preprocess_node(&$variables) {
+function drupalcampaarhus2017_preprocess_node(&$variables) {
   // Setup specific preprocess functions based on node type.
   $function = __FUNCTION__ . '_'. $variables['node']->getType();
 
@@ -65,7 +65,7 @@ function dokkx_preprocess_node(&$variables) {
  * Calls node type specific preprocess functions, e.g. "dokk_preprocess_node_event" for nodes of type event.
  *
  */
-function dokkx_preprocess_menu(&$variables) {
+function drupalcampaarhus2017_preprocess_menu(&$variables) {
   $variables['hamburger_menu'] = FALSE;
   // The only way to identify which region is rendering the menu block is to check for expanded (Main nav does not have any children and neither item is expanded.)
   // This won't work if for some reason none of the menu items have any children,
@@ -80,7 +80,7 @@ function dokkx_preprocess_menu(&$variables) {
 /**
  * Implements hook_preprocess_node__type().
  */
-function dokkx_preprocess_node_event(&$variables) {
+function drupalcampaarhus2017_preprocess_node_event(&$variables) {
   // Set timezone UTC to properly create format.
   $DateTimeZoneUTC = new DateTimeZone('UTC');
 
@@ -100,7 +100,7 @@ function dokkx_preprocess_node_event(&$variables) {
  * Alter the contact form - This is the only way.
  */
 
-function dokkx_form_contact_message_book_en_rundvisning_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
+function drupalcampaarhus2017_form_contact_message_book_en_rundvisning_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
 
   // Name
   $form['name']['#attributes']['placeholder'][] = 'Skriv dit fulde navn';
@@ -140,7 +140,7 @@ function dokkx_form_contact_message_book_en_rundvisning_form_alter(&$form, \Drup
  *
  * Enable preprocess function for specific fields.
  */
-function dokkx_preprocess_field(&$variables) {
+function drupalcampaarhus2017_preprocess_field(&$variables) {
   $function = __FUNCTION__ . '__' . $variables['element']['#field_name'];
 
   if (function_exists($function)) {
@@ -154,6 +154,6 @@ function dokkx_preprocess_field(&$variables) {
  *
  * Enable preprocess function for specific fields.
  */
-function dokkx_preprocess_field__field_iframe(&$variables) {
+function drupalcampaarhus2017_preprocess_field__field_iframe(&$variables) {
   $variables['unformatted_iframe'] = strip_tags($variables['items']['0']['content']['#context']['value'], '<iframe>');
 }

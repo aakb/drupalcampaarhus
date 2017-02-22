@@ -62,64 +62,53 @@
  * @ingroup themeable
  */
 #}
-<div class="overlay js-menu-toggle"></div>
-<a href="/" class="logo js-logo" title="DokkX"><figure>{% include '@dokkx/../images/assets/logo.svg' %}</figure></a>
-<nav class="nav js-nav">
-  <div class="nav--links">
-    {{ page.nav_menu }}
-  </div>
-</nav>
-<div class="nav-toggle js-menu-toggle">
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
-<nav class="hamburger-menu">
-  <div class="hamburger-menu--inner">
-    <div class="hamburger-menu--links">
-      {{ page.hamburger }}
+
+<header>
+  <div class="overlay js-menu-toggle"></div>
+
+  <a href="/" class="logo js-logo" title="drupalcampaarhus2017"><figure>{% include '@drupalcampaarhus2017/../images/assets/logo.svg' %}</figure></a>
+  <nav class="nav js-nav">
+    <div class="nav--links">
+      {{ page.nav_menu }}
     </div>
+  </nav>
+  <div class="nav-toggle js-menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
   </div>
-</nav>
-
-<div class="header" role="banner" id="home" style="background-image: url({{ front_image }})">
-  <div class="header--inner">
-    <h1 class="header--big">{{ front_title }}</h1>
-    {% if front_lead %}
-      <p class="header--lead">
-        {{ front_lead }}
-      </p>
-    {% endif %}
-    {% if front_sub %}
-      <p class="header--sub">
-        {{ front_sub }}
-      </p>
-    {% endif %}
-    {% if front_button_text and front_button_link %}
-      <div class="header--button-wrapper">
-        <a href="{{ front_button_link }}" class="header--button-link is-primary">{{ front_button_text }}</a>
+  <nav class="hamburger-menu">
+    <div class="hamburger-menu--inner">
+      <div class="hamburger-menu--links">
+        {{ page.hamburger }}
       </div>
-    {% endif %}
-  </div>
-</div>
+    </div>
+  </nav>
+</header>
 
-{%
-  set classes = [
-    'content--inner',
-    'content--inner-' ~ region|clean_class,
-  ]
-%}
 <main role="main" class="content">
-    <div{{ attributes.addClass(classes) }}>
-     {{ title }}
-    {{ title }}
+  <figure class="content--image-wrapper">
+    <img src="{{ contact_image }}">
+  </figure>
+  <div class="content--inner">
+
+    <h1 class="content--header">{{ contact_title }}</h1>
+    <div class="content--lead">
+      <p>{{ contact_lead }}</p>
+    </div>
+    <div class="content--text">
+      <p>{{ contact_text }}</p>
+    </div>
+
+    <fieldset>
+      <legend>Book en rundvisning</legend>
+      <p>[tekst mangler]</p>
   {{ page.content }}
-</div>
+</fieldset>
+  </div>
 </main>
-
-
-{% include '@dokkx/layout/_footer.html.twig' %}
+{% include '@drupalcampaarhus2017/layout/_footer.html.twig' %}
 
 {# Tabs positioned fixed. #}
 {{ tabs }}

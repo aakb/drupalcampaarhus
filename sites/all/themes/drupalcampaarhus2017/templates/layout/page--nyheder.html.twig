@@ -66,7 +66,7 @@
 <header>
   <div class="overlay js-menu-toggle"></div>
 
-  <a href="/" class="logo js-logo" title="DokkX"><figure>{% include '@dokkx/../images/assets/logo.svg' %}</figure></a>
+  <a href="/" class="logo js-logo" title="drupalcampaarhus2017"><figure>{% include '@drupalcampaarhus2017/../images/assets/logo.svg' %}</figure></a>
   <nav class="nav js-nav">
     <div class="nav--links">
       {{ page.nav_menu }}
@@ -89,26 +89,14 @@
 
 <main role="main" class="content">
   <figure class="content--image-wrapper">
-    <img src="{{ contact_image }}">
+    <img src="{{ news_image }}">
   </figure>
   <div class="content--inner">
-
-    <h1 class="content--header">{{ contact_title }}</h1>
-    <div class="content--lead">
-      <p>{{ contact_lead }}</p>
-    </div>
-    <div class="content--text">
-      <p>{{ contact_text }}</p>
-    </div>
-
-    <fieldset>
-      <legend>Book en rundvisning</legend>
-      <p>[tekst mangler]</p>
-  {{ page.content }}
-</fieldset>
+    <h1 class="content--header">{{ news_title }}</h1>
+    {{ page.content }}
   </div>
 </main>
-{% include '@dokkx/layout/_footer.html.twig' %}
+{% include '@drupalcampaarhus2017/layout/_footer.html.twig' %}
 
 {# Tabs positioned fixed. #}
 {{ tabs }}

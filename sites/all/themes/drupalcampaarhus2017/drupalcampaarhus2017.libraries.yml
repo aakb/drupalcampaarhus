@@ -3,6 +3,7 @@ global-styling:
   css:
     theme:
       css/styles.css: { media: screen }
+      css/roboto.css: { media: screen }
       css/ie9.css: { browsers: { IE: 'lte IE 9', '!IE': false } }
 
 global-js:

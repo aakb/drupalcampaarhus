@@ -215,7 +215,7 @@ display:
           row_class: ''
           default_row_class: false
           uses_fields: false
-      title: Velfærdsteknologier
+      title: 'Drupal Camp Aarhus 2017'
       header:
         area_text_custom:
           id: area_text_custom

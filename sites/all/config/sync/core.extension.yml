@@ -8,7 +8,6 @@ module:
   ctools: 0
   datetime: 0
   dblog: 0
-  devel_generate: 0
   dokkx_setup: 0
   dynamic_page_cache: 0
   editor: 0
@@ -39,7 +38,6 @@ module:
   menu_ui: 0
   node: 0
   page_cache: 0
-  paragraphs: 0
   path: 0
   pathauto: 0
   redirect: 0
@@ -55,6 +53,7 @@ module:
   views: 0
   views_ui: 0
   youtube: 0
+  paragraphs: 11
   minimal: 1000
 theme:
   stark: 0
@@ -63,6 +62,8 @@ theme:
   seven: 0
   dokkx: 0
   itkore: 0
+  adminimal_theme: 0
+  drupalcampaarhus2017: 0
 _core:
   default_config_hash: m2GVq11UAOVuNgj8x0t5fMOPujpvQQ_zxLoaly1BMEU
 langcode: da

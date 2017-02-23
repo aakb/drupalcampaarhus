@@ -1,0 +1,24 @@
+uuid: 5b59e537-0428-4f18-ab75-017dc63a9397
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - drupalcampaarhus2017
+id: drupalcampaarhus2017_mainnavigation_2
+theme: drupalcampaarhus2017
+region: nav_menu
+weight: -2
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+visibility: {  }

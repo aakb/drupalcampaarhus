@@ -1,5 +1,5 @@
 uuid: 1cd4d3e6-a431-4760-b10e-148c186a6f89
-name: Dokkx
+name: 'Drupal Camp Aarhus'
 mail: admin@example.com
 slogan: ''
 page:
@@ -9,4 +9,4 @@ page:
 admin_compact_mode: false
 weight_select_max: 100
 langcode: da
-default_langcode: da
+default_langcode: en

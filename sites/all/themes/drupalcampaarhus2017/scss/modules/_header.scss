@@ -15,13 +15,7 @@
 
   background-size: cover;
   color: #fff;
-
-  &:before {
-    @extend %image-overlay;
-
-    background-color: rgba(0, 0, 0, .5);
-  }
-
+  
   // Handle z-index for remaining elements.
   &--inner,
   &--big,

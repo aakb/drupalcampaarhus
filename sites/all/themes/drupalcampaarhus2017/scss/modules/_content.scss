@@ -97,18 +97,6 @@
     position: relative;
 
     margin-bottom: 2.5em;
-
-    @include breakpoint($breakpoint-desk) {
-      overflow: hidden;
-
-      height: 500px;
-    }
-
-    @include breakpoint($breakpoint-bigscreen) {
-      img {
-        margin-top: -225px;
-      }
-    }
   }
 
   &--lead {

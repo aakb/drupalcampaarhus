@@ -85,22 +85,9 @@
 
 <div class="header" role="banner" id="home" style="background-image: url({{ front_image }})">
   <div class="header--inner">
+    {% include '@drupalcampaarhus2017/../images/assets/logo-white.svg' %}
     <h1 class="header--big">{{ front_title }}</h1>
-    {% if front_lead %}
-      <p class="header--lead">
-        {{ front_lead }}
-      </p>
-    {% endif %}
-    {% if front_sub %}
-      <p class="header--sub">
-        {{ front_sub }}
-      </p>
-    {% endif %}
-    {% if front_button_text and front_button_link %}
-      <div class="header--button-wrapper">
-        <a href="{{ front_button_link }}" class="header--button-link is-primary">{{ front_button_text }}</a>
-      </div>
-    {% endif %}
+    <h2 class="header--lead">{{ front_lead }}</h2>
   </div>
 </div>
 

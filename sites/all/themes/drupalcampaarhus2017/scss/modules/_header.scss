@@ -15,6 +15,32 @@
 
   background-size: cover;
   color: #fff;
+  font-family: $font-slab;
+  text-align: center;
+
+  &:before {
+    background-color: transparentize($black, .5);
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .logo-white {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100px;
+
+    @include breakpoint($breakpoint-tablet) {
+      max-width: 150px;
+    }
+
+    @include breakpoint($breakpoint-desk) {
+      max-width: 200px;
+    }
+  }
 
   // Handle z-index for remaining elements.
   &--inner,
@@ -25,7 +51,6 @@
     position: relative;
     z-index: z($z-index-elements, header);
   }
-
 
   @include breakpoint($breakpoint-tablet) {
     padding-bottom: 1em;
@@ -38,7 +63,7 @@
     height: 100%;
     margin-right: auto;
     margin-left: auto;
-    padding-top: 5.75em;
+    padding-top: 7.75em;
     padding-right: $layout-padding;
     padding-bottom: 1.75em;
     padding-left: $layout-padding;
@@ -67,7 +92,8 @@
 
   // Big header
   &--big {
-    margin-bottom: .5em;
+    margin-top: .5em;
+    margin-bottom: .25em;
 
     font-size: 1.65em;
     font-weight: 600;
@@ -103,15 +129,14 @@
   &--lead {
     margin-bottom: 1em;
 
-    font-size: 1.1em;
-    font-weight: 600;
+    font-size: 1.25em;
 
     @include breakpoint($breakpoint-desk) {
-      font-size: 1.5em;
+      font-size: 1.75em;
     }
 
     @include breakpoint($breakpoint-bigscreen) {
-      font-size: 1.75em;
+      font-size: 2em;
     }
   }
 

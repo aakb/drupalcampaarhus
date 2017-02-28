@@ -12,25 +12,25 @@
 
 @font-face {
   font-family: 'Roboto';
-  src: url("/roboto/Roboto-Bold.ttf") format("truetype");
+  src: url("roboto/Roboto-Bold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal; }
 
 @font-face {
   font-family: 'Roboto';
-  src: url("/roboto/Roboto-BoldItalic.ttf") format("truetype");
+  src: url("roboto/Roboto-BoldItalic.ttf") format("truetype");
   font-weight: 600;
   font-style: italic; }
 
 @font-face {
   font-family: 'Roboto';
-  src: url("/roboto/Roboto-Light.ttf") format("truetype");
+  src: url("roboto/Roboto-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal; }
 
 @font-face {
   font-family: 'Roboto';
-  src: url("/roboto/Roboto-LightItalic.ttf") format("truetype");
+  src: url("roboto/Roboto-LightItalic.ttf") format("truetype");
   font-weight: 300;
   font-style: italic; }
 

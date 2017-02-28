@@ -42,8 +42,6 @@ $boxlist-padding: 1em;
     color: $gray-light;
   }
 
-
-
   &--link,
   &--link:link,
   &--link:visited {
@@ -145,6 +143,7 @@ $boxlist-padding: 1em;
 
     @include flex-flow(column);
     @include flex-basis(40%);
+
     header {
       order: 1;
 
@@ -152,7 +151,7 @@ $boxlist-padding: 1em;
       text-align: center;
 
       a {
-        @include strip-link-styles($theme-color);
+        @include strip-link-styles($gray-darkest);
       }
     }
 
@@ -212,11 +211,10 @@ $boxlist-padding: 1em;
     display: inline-block;
     margin-right: auto;
     margin-left: auto;
-    padding: .5em 1em;
+    padding: .5em 0;
 
-    background-color: $link-color;
-    border: 1px solid $link-color;
-    color: $white;
+    border-bottom: 3px solid $gray-darkest;
+    color: $gray-darkest;
     font-weight: 300;
     text-align: center;
     text-decoration: none;
@@ -226,7 +224,7 @@ $boxlist-padding: 1em;
 
     &:hover {
       background-color: transparent;
-      border: 1px solid $link-color;
+      border-bottom: 3px solid $link-color;
       color: $link-color;
     }
   }

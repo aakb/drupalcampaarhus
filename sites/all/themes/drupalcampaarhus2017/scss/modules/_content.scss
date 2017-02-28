@@ -60,9 +60,8 @@
 
   h3,
   h4,
-  &--header,
-  &--lead {
-    font-weight: 600;
+  &--header {
+    font-weight: 700;
   }
 
   &--header,
@@ -100,6 +99,7 @@
   }
 
   &--lead {
+    font-family: $font-slab;
     font-size: 1.25em;
 
     @include breakpoint($breakpoint-tablet) {

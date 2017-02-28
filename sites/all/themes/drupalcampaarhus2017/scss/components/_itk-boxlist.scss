@@ -211,11 +211,12 @@ $boxlist-padding: 1em;
     display: inline-block;
     margin-right: auto;
     margin-left: auto;
-    padding: .5em 0 .1em;
+    padding: .5em 0 .2em;
 
     border-bottom: 3px solid $gray-darkest;
     color: $gray-darkest;
     font-weight: 300;
+    line-height: 2.5em;
     text-align: center;
     text-decoration: none;
 

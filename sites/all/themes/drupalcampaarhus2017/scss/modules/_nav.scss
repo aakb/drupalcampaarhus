@@ -99,9 +99,6 @@
 
       &.is-active,
       &.is-active:hover {
-        margin-top: -1em;
-        margin-bottom: -1em;
-
         background-color: $theme-color;
 
         @include strip-link-styles($white, none);

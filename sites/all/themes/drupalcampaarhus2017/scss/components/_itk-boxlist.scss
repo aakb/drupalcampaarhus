@@ -105,6 +105,7 @@ $boxlist-padding: 1em;
       padding-right: $boxlist-padding;
       padding-left: $boxlist-padding;
 
+      @include align-self(center);
       @include flex-grow(1);
       @include flex-shrink(1);
     }
